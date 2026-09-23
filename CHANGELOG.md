@@ -9,6 +9,53 @@ rien à télécharger.
 
 ---
 
+## 3.15 — Des menus rangés, des réglages qui vous suivent
+*23 septembre 2026*
+
+**Les menus sont réorganisés.** « Affichage » avait fini par tout
+accueillir — quatre actions de podcasts, la récupération des métadonnées,
+un réglage — pendant qu'« Édition » ne contenait qu'une seule ligne.
+Chaque entrée est maintenant là où on la cherche :
+
+- un menu **Bibliothèque** pour tout ce qui agit sur votre collection ;
+- un menu **Podcasts** pour tout ce qui les concerne ;
+- **Affichage** ne garde que ce qui touche à l'aspect ;
+- les **Paramètres** passent dans **Édition** (Ctrl+,), à leur place.
+
+**Les préférences sont enfin complètes**, en cinq onglets : Général,
+Lecture, Bibliothèque, Podcasts et Transfert. Les réglages qui traînaient
+en cases perdues dans les menus les ont rejointes.
+
+**Vous pouvez emporter vos réglages.** Réinstaller Windows ou changer
+d'ordinateur effaçait tout ce que vous aviez réglé : la langue, la sortie
+audio, les colonnes choisies, leur ordre, leur largeur, le tri de chaque
+vue, vos dossiers de musique. **Édition → Paramètres → Transfert**
+enregistre tout cela dans un fichier, et sait le reposer ailleurs. Un
+dossier de musique absent du nouvel ordinateur est écarté, et l'application
+vous dit lequel.
+
+**Compléter depuis MusicBrainz** (menu Bibliothèque) va chercher sur
+internet ce qui manque encore : l'œuvre, le compositeur, le chef
+d'orchestre, l'orchestre, le label, le numéro de catalogue et l'ISRC.
+
+Un morceau n'est retenu que si sa **durée correspond à trois secondes
+près**. Si deux enregistrements se valent, il est laissé de côté : mieux
+vaut une case vide qu'une case fausse. Et rien de ce que vous avez n'est
+jamais remplacé.
+
+**Corrections**
+
+- Les messages d'alerte affichés **avant** l'ouverture de la fenêtre
+  principale étaient illisibles, texte clair sur fond clair.
+- « Importer des fichiers » et « Statistiques » partageaient le raccourci
+  Ctrl+I : Windows n'en déclenchait aucun. Les statistiques passent sur
+  Ctrl+Maj+S.
+- Le manuel restait figé pour qui l'avait déjà ouvert une fois : il se
+  refait désormais à chaque nouvelle version.
+- Cinq albums pouvaient pointer vers un artiste supprimé.
+
+---
+
 ## 3.14 — Toutes les informations de vos morceaux
 *22 et 23 septembre 2026*
 
