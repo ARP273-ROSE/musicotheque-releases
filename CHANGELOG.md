@@ -10,7 +10,16 @@ rien à télécharger.
 ---
 
 ## 3.14 — Toutes les informations de vos morceaux
-*22 septembre 2026*
+*22 et 23 septembre 2026*
+
+> **3.14.5** — L'aide intégrée gagne deux chapitres : « Les colonnes du
+> tableau » et « Les informations d'un morceau ». Le manuel se met à jour
+> tout seul à chaque nouvelle version, alors qu'il restait figé pour qui
+> l'avait déjà ouvert une fois.
+>
+> **3.14.2 à 3.14.4** — Corrections des blocages : l'application ne se fige
+> plus pendant « Tout récupérer », « Retrouver les dates des épisodes » ni
+> « Classer la bibliothèque ».
 
 La grande affaire de cette version : MusicOthèque connaît désormais
 **plus de cinquante informations** par morceau, au lieu d'une quinzaine.
