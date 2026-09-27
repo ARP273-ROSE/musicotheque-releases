@@ -9,6 +9,28 @@ rien à télécharger.
 
 ---
 
+## 3.15.1 — Chaque morceau n'apparaît plus qu'une fois
+*27 septembre 2026*
+
+**Des morceaux apparaissaient en double.** Après « Tout récupérer »,
+certains albums montraient chaque piste deux fois : une ligne « 1 », une
+ligne « 1 sur 4 ». Ce n'étaient pas deux fichiers, mais le même, compté
+deux fois : une fois en lisant vos dossiers, une fois en lisant iTunes.
+Il suffisait qu'un nom de dossier diffère d'une majuscule entre les deux.
+
+**C'est réparé tout seul.** Une minute environ après le premier
+démarrage de cette version, MusicOthèque fait une sauvegarde, puis réunit
+chaque paire en un seul morceau. Celui qui reste garde **tout ce que les
+deux savaient** : le nombre de pistes, le compositeur, vos écoutes, vos
+notes. Vos listes de lecture le retrouvent. **Aucun fichier n'est touché**,
+seulement la liste de la bibliothèque. Un message en bas de la fenêtre
+vous dit combien de doublons ont été retirés.
+
+**Pour écouter une œuvre dans l'ordre** (un opéra, une symphonie) :
+cliquez sur le titre de la colonne **Album**, ou Affichage → Ranger dans
+l'ordre de l'album (Ctrl+Alt+A). Pour tous les disques d'un artiste dans l'ordre
+où ils sont sortis : cliquez sur la colonne **Artiste**.
+
 ## 3.15 — Des menus rangés, des réglages qui vous suivent
 *23 septembre 2026*
 
