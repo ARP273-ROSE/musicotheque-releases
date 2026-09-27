@@ -9,6 +9,29 @@ rien à télécharger.
 
 ---
 
+## 3.15.2 — Retirer un morceau
+*27 septembre 2026*
+
+**Vous pouvez retirer un morceau**, de deux façons qui ne font pas la
+même chose :
+
+- **d'une liste de lecture** : clic droit → « Retirer de la playlist ».
+  Le morceau quitte cette liste, mais reste dans votre bibliothèque et
+  dans vos autres listes ;
+- **de la bibliothèque** : clic droit → « Retirer de la bibliothèque… ».
+  Le morceau disparaît partout, de la bibliothèque comme de toutes vos
+  listes. MusicOthèque vous demande confirmation avant.
+
+**La touche Suppr marche aussi** : dans une liste de lecture, elle retire
+de la liste ; ailleurs, de la bibliothèque (après confirmation).
+
+Pour en retirer plusieurs d'un coup : sélectionnez-les avec **Ctrl + clic**.
+
+**Votre fichier n'est jamais effacé du disque.** Et un morceau retiré ne
+revient pas tout seul lors d'une nouvelle lecture de vos dossiers ou
+d'iTunes. Si vous changez d'avis : Fichier → Importer des fichiers, et
+désignez-le.
+
 ## 3.15.1 — Chaque morceau n'apparaît plus qu'une fois
 *27 septembre 2026*
 
