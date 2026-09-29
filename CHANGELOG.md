@@ -9,6 +9,15 @@ rien à télécharger.
 
 ---
 
+## 3.18.1 — L'écoute des morceaux de ARP273-ROSE démarre
+*29 septembre 2026*
+
+Les morceaux de ARP273-ROSE ne se lançaient pas : le lecteur passait de l'un à
+l'autre sans rien jouer. Corrigé : ils s'écoutent désormais normalement, et
+l'avance rapide fonctionne.
+
+---
+
 ## 3.18.0 — La musique de ARP273-ROSE, directement dans vos listes
 *29 septembre 2026*
 
