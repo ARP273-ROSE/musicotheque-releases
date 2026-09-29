@@ -9,6 +9,16 @@ rien à télécharger.
 
 ---
 
+## 3.18.3 — Une fin de quiz propre
+*29 septembre 2026*
+
+Quand le quiz se termine, le morceau en cours va jusqu'au bout, puis la
+musique s'arrête : les morceaux du quiz ne s'enchaînent plus au hasard.
+Votre liste d'avant le quiz revient, dans son ordre habituel. Et le quiz se
+termine tout seul à la fin de son dernier morceau.
+
+---
+
 ## 3.18.2 — Le quiz part vraiment au milieu
 *29 septembre 2026*
 
