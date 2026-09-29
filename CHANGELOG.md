@@ -9,6 +9,23 @@ rien à télécharger.
 
 ---
 
+## 3.17.2 — Plus fluide pendant les téléchargements
+*29 septembre 2026*
+
+- **Le logiciel ne se fige plus** à la fin d'un téléchargement depuis la
+  bibliothèque partagée, ni quand vous cliquez sur « Arrêter » : l'arrêt est
+  immédiat.
+- Vous pouvez **fermer la fenêtre de la bibliothèque partagée** pendant un
+  téléchargement : il continue, et son avancement s'affiche en bas de la
+  fenêtre principale.
+- Trier, filtrer ou tout sélectionner parmi des dizaines de milliers de
+  morceaux reste instantané, même pendant un téléchargement.
+- Après un ajout, la liste ne saute plus : votre sélection et votre position
+  restent en place.
+- La connexion ne bloque plus la fenêtre si le serveur tarde à répondre.
+
+---
+
 ## 3.17.1 — Une taille plus lisible
 *29 septembre 2026*
 
