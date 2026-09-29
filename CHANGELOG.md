@@ -9,6 +9,26 @@ rien à télécharger.
 
 ---
 
+## 3.17.0 — La taille avant de télécharger
+*29 septembre 2026*
+
+**Vous savez ce que vous allez télécharger.** Avant chaque ajout depuis la
+bibliothèque partagée, MusicOthèque annonce la taille exacte, en octets
+(par exemple *12 345 678 octets, soit 11,8 Mo*), morceau par morceau quand
+ils sont peu nombreux. Vous confirmez ou vous annulez. La barre de
+progression compte ensuite les octets reçus.
+
+**La bibliothèque partagée se tient à jour toute seule** : au démarrage,
+puis toutes les deux heures. Quand des morceaux y sont ajoutés, un message
+l'annonce en bas de la fenêtre.
+
+**Quand le serveur se repose** (par forte chaleur, ses disques dorment), un
+bandeau orange le signale : la recherche marche toujours, ce qui est déjà
+sur votre ordinateur se joue normalement, et l'écoute en ligne comme les
+téléchargements reprennent tout seuls à la fin de la canicule.
+
+---
+
 ## 3.16.0 — La bibliothèque partagée
 *29 septembre 2026*
 
