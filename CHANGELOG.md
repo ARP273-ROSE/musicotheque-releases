@@ -9,6 +9,24 @@ rien à télécharger.
 
 ---
 
+## 3.18.0 — La musique de Kevin, directement dans vos listes
+*29 septembre 2026*
+
+- **Quand vous cherchez un morceau**, la liste montre d'abord les vôtres,
+  puis ceux de Kevin que vous n'avez pas encore : ceux-là sont en
+  *italique bleu*, avec un petit nuage ☁ devant le titre. En bas à droite,
+  le compte distingue « sur mon PC » et « chez Kevin ».
+- **Dans « Toutes les pistes »**, une case *☁ Afficher les morceaux de
+  Kevin* ajoute toute sa musique à la suite de la vôtre. Décochez-la pour
+  revenir à vos seuls morceaux ; le choix est retenu.
+- **Double-cliquez** sur un morceau de Kevin pour l'écouter, sans rien
+  copier. **Clic droit** pour l'ajouter à votre bibliothèque ou à une
+  liste de lecture.
+- Pendant l'écoute d'un morceau de Kevin, l'étiquette *☁ CHEZ KEVIN*
+  s'affiche près du lecteur.
+
+---
+
 ## 3.17.2 — Plus fluide pendant les téléchargements
 *29 septembre 2026*
 
