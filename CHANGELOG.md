@@ -9,6 +9,16 @@ rien à télécharger.
 
 ---
 
+## 3.18.2 — Le quiz part vraiment au milieu
+*29 septembre 2026*
+
+Dans le quiz, la case « Commencer en plein milieu des pistes » ne marchait
+que pour le premier morceau : les suivants repartaient du début. Désormais
+chaque morceau commence quelque part entre le quart et les trois quarts, et
+on n'entend jamais son début.
+
+---
+
 ## 3.18.1 — L'écoute des morceaux de Kevin démarre
 *29 septembre 2026*
 
