@@ -9,6 +9,35 @@ rien à télécharger.
 
 ---
 
+## 3.16.0 — La bibliothèque partagée
+*29 septembre 2026*
+
+**Vous pouvez parcourir et écouter la bibliothèque d'un proche**, qui se
+trouve sur son serveur : menu **Bibliothèque → Bibliothèque partagée…**,
+puis l'identifiant et le mot de passe qu'il vous a donnés. Une fois
+connecté, elle apparaît dans la colonne de gauche.
+
+- **Écouter** (double-clic) : le morceau est lu en ligne, **rien n'est
+  copié** sur votre ordinateur.
+- **Ajouter à ma bibliothèque** : le morceau est copié sur votre disque,
+  rangé par artiste et par album, et apparaît chez vous comme les autres.
+- **Ajouter à une liste de lecture** : pareil, et il entre dans la liste
+  choisie (ou une nouvelle). Vous pouvez aussi **recopier une de ses
+  listes entière**, sous le même nom.
+- **Copier dans un dossier** : sur le Bureau par exemple, sans l'ajouter
+  à la bibliothèque.
+
+Chaque morceau indique **✔ Sur mon PC** ou **☁ Sur le NAS**. Ce que vous
+avez déjà n'est jamais téléchargé une deuxième fois. La recherche est
+immédiate, même hors connexion ; et quand vous cherchez dans votre propre
+bibliothèque, un bouton bleu vous dit combien de morceaux correspondent
+aussi dans la bibliothèque partagée.
+
+Le mot de passe n'est pas enregistré : l'ordinateur garde une clé
+chiffrée, valable tant que vous vous en servez au moins une fois par mois.
+
+---
+
 ## 3.15.2 — Retirer un morceau
 *27 septembre 2026*
 
