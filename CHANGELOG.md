@@ -9,14 +9,22 @@ rien à télécharger.
 
 ---
 
+## 3.17.1 — Une taille plus lisible
+*29 septembre 2026*
+
+La taille d'un téléchargement depuis la bibliothèque partagée s'affiche
+désormais **en un seul chiffre, le total**, dans l'unité qui convient :
+*850 Ko*, *21,0 Mo*, *3,27 Go*…
+
+---
+
 ## 3.17.0 — La taille avant de télécharger
 *29 septembre 2026*
 
 **Vous savez ce que vous allez télécharger.** Avant chaque ajout depuis la
-bibliothèque partagée, MusicOthèque annonce la taille exacte, en octets
-(par exemple *12 345 678 octets, soit 11,8 Mo*), morceau par morceau quand
-ils sont peu nombreux. Vous confirmez ou vous annulez. La barre de
-progression compte ensuite les octets reçus.
+bibliothèque partagée, MusicOthèque annonce la taille du téléchargement.
+Vous confirmez ou vous annulez. La barre de progression suit ensuite ce qui
+a été reçu.
 
 **La bibliothèque partagée se tient à jour toute seule** : au démarrage,
 puis toutes les deux heures. Quand des morceaux y sont ajoutés, un message
