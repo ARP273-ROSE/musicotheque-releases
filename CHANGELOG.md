@@ -9,6 +9,16 @@ rien à télécharger.
 
 ---
 
+## 3.18.4 — L'écoute des morceaux de Kevin ne s'interrompt plus
+*3 octobre 2026*
+
+L'écoute d'un morceau de Kevin pouvait s'interrompre au bout de deux
+minutes environ. Désormais le morceau arrive en une ou deux secondes, puis
+se joue d'un bout à l'autre sans dépendre de la connexion internet. Rien
+n'est enregistré sur votre disque.
+
+---
+
 ## 3.18.3 — Une fin de quiz propre
 *29 septembre 2026*
 
