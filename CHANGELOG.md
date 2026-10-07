@@ -9,6 +9,17 @@ rien à télécharger.
 
 ---
 
+## 3.18.5 — Plus de bibliothèque vide par erreur
+*7 octobre 2026*
+
+- Si MusicOthèque s'ouvre sur une bibliothèque vide alors que votre
+  bibliothèque habituelle se trouve ailleurs, il vous le dit et vous propose
+  de l'ouvrir.
+- Le logiciel ne modifie plus vos raccourcis du Bureau.
+- La détection du lecteur de CD ne produit plus d'erreur en arrière-plan.
+
+---
+
 ## 3.18.4 — L'écoute des morceaux de Kevin ne s'interrompt plus
 *3 octobre 2026*
 
