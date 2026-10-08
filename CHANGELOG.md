@@ -9,6 +9,16 @@ rien à télécharger.
 
 ---
 
+## 3.21.4 — Retrouver le morceau en cours
+*8 octobre 2026*
+
+Un nouveau bouton ◎, à droite du titre en bas de la fenêtre (ou Ctrl+J),
+ramène à la liste d'où le morceau est lu et le montre, sélectionné, au milieu
+de l'écran — pratique quand on a changé de liste ou dans une très longue
+liste.
+
+---
+
 ## 3.21.3 — Les webradios sont surveillées
 *8 octobre 2026*
 
