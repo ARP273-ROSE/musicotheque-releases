@@ -9,6 +9,14 @@ rien à télécharger.
 
 ---
 
+## 3.20.3 — Reprise automatique sans droits d'administrateur
+*8 octobre 2026*
+
+La reprise de l'envoi après un redémarrage ne demande plus de droits
+d'administrateur.
+
+---
+
 ## 3.20.2 — Partage de musique vers Kevin : reprise automatique
 *8 octobre 2026*
 
