@@ -9,6 +9,14 @@ rien à télécharger.
 
 ---
 
+## 3.20.2 — Partage de musique vers ARP273-ROSE : reprise automatique
+*8 octobre 2026*
+
+L'envoi de morceaux vers le serveur de ARP273-ROSE reprend tout seul après un
+redémarrage de l'ordinateur.
+
+---
+
 ## 3.20.1 — Partage de musique vers ARP273-ROSE (suite)
 *8 octobre 2026*
 
