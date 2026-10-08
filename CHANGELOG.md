@@ -9,6 +9,18 @@ rien à télécharger.
 
 ---
 
+## 3.19.0 — Vos listes d'Apple Music
+*8 octobre 2026*
+
+Si vous avez remplacé iTunes par Apple Music, vos nouvelles listes de
+lecture n'arrivaient plus dans MusicOthèque : Apple Music pour Windows ne
+sait pas les exporter. MusicOthèque va maintenant les chercher lui-même :
+menu **Bibliothèque → Récupérer les listes d'Apple Music…**. Il vous montre
+celles qui vous manquent ; vous cochez, il les ajoute. Rien n'est modifié
+dans Apple Music, et vous pouvez recommencer quand vous voulez.
+
+---
+
 ## 3.18.5 — Plus de bibliothèque vide par erreur
 *7 octobre 2026*
 
