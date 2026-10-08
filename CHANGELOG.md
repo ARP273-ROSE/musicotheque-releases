@@ -9,6 +9,20 @@ rien à télécharger.
 
 ---
 
+## 3.21.0 — Ordre des listes de lecture
+*8 octobre 2026*
+
+- Quand vous triez par une colonne, une flèche apparaît à côté de son nom :
+  ▲ dans un sens, ▼ dans l'autre. Chaque clic inverse le sens.
+- Les listes de lecture ont une colonne **N° liste** : la place de chaque
+  morceau dans la liste.
+- Vous pouvez changer l'ordre d'une liste : faites glisser un morceau plus
+  haut ou plus bas, ou clic droit → **Déplacer dans la liste**.
+- Menu **Bibliothèque → Remettre l'ordre d'Apple Music dans les listes…** :
+  vos listes reprennent l'ordre qu'elles avaient dans Apple Music.
+
+---
+
 ## 3.20.3 — Reprise automatique sans droits d'administrateur
 *8 octobre 2026*
 
