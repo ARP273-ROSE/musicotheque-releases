@@ -9,6 +9,13 @@ rien à télécharger.
 
 ---
 
+## 3.20.1 — Partage de musique vers ARP273-ROSE (suite)
+*8 octobre 2026*
+
+Amélioration de l'outil d'envoi de morceaux vers le serveur de ARP273-ROSE.
+
+---
+
 ## 3.20.0 — Préparation d'un partage de musique vers ARP273-ROSE
 *8 octobre 2026*
 
