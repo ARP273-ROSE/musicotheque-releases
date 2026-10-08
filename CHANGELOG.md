@@ -9,6 +9,16 @@ rien à télécharger.
 
 ---
 
+## 3.19.2 — Apple Music retrouvé partout
+*8 octobre 2026*
+
+- Si votre dossier Musique a été déplacé sur un autre disque, MusicOthèque
+  y trouve maintenant la bibliothèque d'Apple Music.
+- Deux listes d'Apple Music identiques ne sont plus ajoutées toutes les
+  deux.
+
+---
+
 ## 3.19.1 — Pas de listes en double
 *8 octobre 2026*
 
