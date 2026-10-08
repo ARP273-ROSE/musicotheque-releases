@@ -9,6 +9,15 @@ rien à télécharger.
 
 ---
 
+## 3.21.3 — Les webradios sont surveillées
+*8 octobre 2026*
+
+Une fois par semaine, MusicOthèque vérifie discrètement que chaque webradio
+joue encore. Si une station se tait (adresse changée, radio arrêtée), Kevin
+est prévenu et peut la réparer.
+
+---
+
 ## 3.21.2 — Menus lisibles sous Windows 11
 *8 octobre 2026*
 
