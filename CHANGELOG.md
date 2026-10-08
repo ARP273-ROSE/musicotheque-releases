@@ -9,6 +9,14 @@ rien à télécharger.
 
 ---
 
+## 3.21.2 — Menus lisibles sous Windows 11
+*8 octobre 2026*
+
+Sous Windows 11, les menus du haut (Fichier, Édition…) s'affichaient en gris
+foncé sur fond noir. Ils sont de nouveau clairs et lisibles.
+
+---
+
 ## 3.21.1 — Déplacer les morceaux d'une liste, plus clairement
 *8 octobre 2026*
 
