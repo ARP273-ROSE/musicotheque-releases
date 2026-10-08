@@ -9,6 +9,15 @@ rien à télécharger.
 
 ---
 
+## 3.19.1 — Pas de listes en double
+*8 octobre 2026*
+
+En récupérant vos listes d'Apple Music, MusicOthèque repère maintenant celles
+que vous avez déjà sous un autre nom (mêmes morceaux) : elles sont signalées
+et ne sont pas cochées, pour ne pas les ajouter deux fois.
+
+---
+
 ## 3.19.0 — Vos listes d'Apple Music
 *8 octobre 2026*
 
