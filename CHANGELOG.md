@@ -9,6 +9,18 @@ rien à télécharger.
 
 ---
 
+## 3.21.1 — Déplacer les morceaux d'une liste, plus clairement
+*8 octobre 2026*
+
+- Quand vous faites glisser un morceau dans une liste rangée par
+  **N° liste**, un trait bleu montre exactement où il va se placer, et le
+  titre du morceau suit le curseur.
+- La liste défile toute seule quand vous approchez du haut ou du bas.
+- Si la liste est rangée autrement (par titre, par artiste…), MusicOthèque
+  vous indique qu'il faut d'abord cliquer sur l'en-tête « N° liste ».
+
+---
+
 ## 3.21.0 — Ordre des listes de lecture
 *8 octobre 2026*
 
