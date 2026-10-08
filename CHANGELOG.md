@@ -9,6 +9,15 @@ rien à télécharger.
 
 ---
 
+## 3.21.5 — Le bouton ◎ va jusqu'au morceau
+*8 octobre 2026*
+
+Le bouton ◎ ouvrait bien la bonne liste, mais sans descendre jusqu'au
+morceau. La liste défile désormais jusqu'à lui et le montre au milieu de
+l'écran.
+
+---
+
 ## 3.21.4 — Retrouver le morceau en cours
 *8 octobre 2026*
 
