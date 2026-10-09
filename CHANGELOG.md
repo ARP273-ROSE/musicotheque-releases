@@ -9,6 +9,14 @@ rien à télécharger.
 
 ---
 
+## 3.21.8 — Listes de papa à part
+*9 octobre 2026*
+
+Les listes de lecture rangées dans « Listes de papa » ne sont plus prises pour
+des doublons de vos propres listes quand vous récupérez celles d'Apple Music.
+
+---
+
 ## 3.21.7 — Linux : tout le lecteur du NAS
 *9 octobre 2026*
 
