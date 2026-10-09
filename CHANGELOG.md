@@ -9,6 +9,16 @@ rien à télécharger.
 
 ---
 
+## 3.21.11 — Affichage net partout, touche Entrée
+*9 octobre 2026*
+
+- Cases à cocher, boutons de choix, flèches des listes déroulantes et de la
+  colonne de gauche : tout est désormais dessiné net, quelle que soit la
+  résolution de l'écran.
+- La touche **Entrée** lit le morceau sélectionné dans la liste.
+
+---
+
 ## 3.21.10 — Coches nettes
 *9 octobre 2026*
 
