@@ -9,6 +9,15 @@ rien à télécharger.
 
 ---
 
+## 3.21.9 — Colonnes redimensionnables
+*9 octobre 2026*
+
+Certaines colonnes (le titre surtout) refusaient de s'élargir ou de se
+rétrécir, à cause d'un réglage hérité d'une ancienne version. Toutes se
+redimensionnent désormais en tirant le trait qui les sépare.
+
+---
+
 ## 3.21.8 — Listes de papa à part
 *9 octobre 2026*
 
