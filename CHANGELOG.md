@@ -9,6 +9,14 @@ rien à télécharger.
 
 ---
 
+## 3.21.10 — Coches nettes
+*9 octobre 2026*
+
+Les coches des menus (choix des colonnes, options) s'affichaient
+pixelisées sur les écrans à haute résolution. Elles sont désormais nettes.
+
+---
+
 ## 3.21.9 — Colonnes redimensionnables
 *9 octobre 2026*
 
