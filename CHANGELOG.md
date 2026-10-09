@@ -7,6 +7,9 @@ MusicOthèque se met à jour toute seule : elle vérifie au démarrage s'il
 existe une version plus récente et propose de l'installer. Vous n'avez
 rien à télécharger.
 
+*9 octobre 2026 — Retrait des mentions personnelles ; les anciennes entrées
+parlent désormais du « serveur de partage » et de la « bibliothèque partagée ».*
+
 ---
 
 ## 3.21.11 — Affichage net partout, touche Entrée
@@ -86,8 +89,8 @@ liste.
 *8 octobre 2026*
 
 Une fois par semaine, MusicOthèque vérifie discrètement que chaque webradio
-joue encore. Si une station se tait (adresse changée, radio arrêtée), Kevin
-est prévenu et peut la réparer.
+joue encore. Si une station se tait (adresse changée, radio arrêtée), le
+mainteneur est prévenu et peut la réparer.
 
 ---
 
@@ -133,26 +136,26 @@ d'administrateur.
 
 ---
 
-## 3.20.2 — Partage de musique vers Kevin : reprise automatique
+## 3.20.2 — Partage de musique vers le serveur de partage : reprise automatique
 *8 octobre 2026*
 
-L'envoi de morceaux vers le serveur de Kevin reprend tout seul après un
+L'envoi de morceaux vers le serveur de partage reprend tout seul après un
 redémarrage de l'ordinateur.
 
 ---
 
-## 3.20.1 — Partage de musique vers Kevin (suite)
+## 3.20.1 — Partage de musique vers le serveur de partage (suite)
 *8 octobre 2026*
 
-Amélioration de l'outil d'envoi de morceaux vers le serveur de Kevin.
+Amélioration de l'outil d'envoi de morceaux vers le serveur de partage.
 
 ---
 
-## 3.20.0 — Préparation d'un partage de musique vers Kevin
+## 3.20.0 — Préparation d'un partage de musique vers le serveur de partage
 *8 octobre 2026*
 
-Ajout d'un outil d'envoi de morceaux vers le serveur de Kevin, utilisé
-avec son aide. Rien ne change dans l'utilisation habituelle du logiciel.
+Ajout d'un outil d'envoi de morceaux vers le serveur de partage, utilisé
+avec l'aide de son administrateur. Rien ne change dans l'utilisation habituelle du logiciel.
 
 ---
 
@@ -198,10 +201,10 @@ dans Apple Music, et vous pouvez recommencer quand vous voulez.
 
 ---
 
-## 3.18.4 — L'écoute des morceaux de Kevin ne s'interrompt plus
+## 3.18.4 — L'écoute des morceaux partagés ne s'interrompt plus
 *3 octobre 2026*
 
-L'écoute d'un morceau de Kevin pouvait s'interrompre au bout de deux
+L'écoute d'un morceau partagé pouvait s'interrompre au bout de deux
 minutes environ. Désormais le morceau arrive en une ou deux secondes, puis
 se joue d'un bout à l'autre sans dépendre de la connexion internet. Rien
 n'est enregistré sur votre disque.
@@ -228,29 +231,29 @@ on n'entend jamais son début.
 
 ---
 
-## 3.18.1 — L'écoute des morceaux de Kevin démarre
+## 3.18.1 — L'écoute des morceaux partagés démarre
 *29 septembre 2026*
 
-Les morceaux de Kevin ne se lançaient pas : le lecteur passait de l'un à
+Les morceaux partagés ne se lançaient pas : le lecteur passait de l'un à
 l'autre sans rien jouer. Corrigé : ils s'écoutent désormais normalement, et
 l'avance rapide fonctionne.
 
 ---
 
-## 3.18.0 — La musique de Kevin, directement dans vos listes
+## 3.18.0 — La bibliothèque partagée, directement dans vos listes
 *29 septembre 2026*
 
 - **Quand vous cherchez un morceau**, la liste montre d'abord les vôtres,
-  puis ceux de Kevin que vous n'avez pas encore : ceux-là sont en
+  puis ceux de la bibliothèque partagée que vous n'avez pas encore : ceux-là sont en
   *italique bleu*, avec un petit nuage ☁ devant le titre. En bas à droite,
-  le compte distingue « sur mon PC » et « chez Kevin ».
-- **Dans « Toutes les pistes »**, une case *☁ Afficher les morceaux de
-  Kevin* ajoute toute sa musique à la suite de la vôtre. Décochez-la pour
+  le compte distingue « sur mon PC » et « sur le serveur de partage ».
+- **Dans « Toutes les pistes »**, une case *☁ Afficher les morceaux
+  partagés* ajoute toute la bibliothèque partagée à la suite de la vôtre. Décochez-la pour
   revenir à vos seuls morceaux ; le choix est retenu.
-- **Double-cliquez** sur un morceau de Kevin pour l'écouter, sans rien
+- **Double-cliquez** sur un morceau partagé pour l'écouter, sans rien
   copier. **Clic droit** pour l'ajouter à votre bibliothèque ou à une
   liste de lecture.
-- Pendant l'écoute d'un morceau de Kevin, l'étiquette *☁ CHEZ KEVIN*
+- Pendant l'écoute d'un morceau partagé, l'étiquette *☁ PARTAGÉ*
   s'affiche près du lecteur.
 
 ---
