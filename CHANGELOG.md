@@ -9,6 +9,14 @@ rien à télécharger.
 
 ---
 
+## 3.21.7 — Linux : tout le lecteur du NAS
+*9 octobre 2026*
+
+Sous Linux, les morceaux rangés ailleurs que dans « Musique » et « Torrents »
+sur le NAS (Plex, Téléchargements…) se lisent désormais aussi.
+
+---
+
 ## 3.21.6 — Linux, listes de papa, colonnes
 *9 octobre 2026*
 
