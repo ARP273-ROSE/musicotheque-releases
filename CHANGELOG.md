@@ -9,6 +9,17 @@ rien à télécharger.
 
 ---
 
+## 3.21.6 — Linux, listes de papa, colonnes
+*9 octobre 2026*
+
+- Sous Linux, « Rescanner la bibliothèque » ne lisait aucun dossier du NAS et
+  ne le disait pas. L'analyse fonctionne désormais, et un dossier introuvable
+  est signalé par un message.
+- Un trait sépare les titres de colonnes : on voit où saisir pour élargir.
+- Nouveau groupe « Listes de papa » dans les listes de lecture.
+
+---
+
 ## 3.21.5 — Le bouton ◎ va jusqu'au morceau
 *8 octobre 2026*
 
