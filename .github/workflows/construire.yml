@@ -1,0 +1,317 @@
+name: Construire MusicOtheque
+
+# Construit ICI, dans le depot public, a partir du code du depot prive
+# ARP273-ROSE/musicotheque (cle de deploiement en lecture seule, secret
+# SOURCE_DEPLOY_KEY). Les depots publics compilent gratuitement ; le depot
+# prive, lui, s'est vu refuser ses compilations (quota du compte, 09/10/2026).
+#
+# Declenchement : a la main (« version »), ou tout seul toutes les 3 heures
+# quand le depot prive porte un tag plus recent que la derniere Release.
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version a construire (sans le v), ex. 3.21.7"
+        required: false
+  schedule:
+    - cron: '17 */3 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: construire-musicotheque
+  cancel-in-progress: false
+
+jobs:
+  guetter:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.choix.outputs.version }}
+    steps:
+      - name: Lire les tags du depot prive
+        uses: actions/checkout@v4
+        with:
+          repository: ARP273-ROSE/musicotheque
+          ssh-key: ${{ secrets.SOURCE_DEPLOY_KEY }}
+          fetch-depth: 0
+          path: source
+      - name: Choisir la version a construire
+        id: choix
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [ -n "${{ github.event.inputs.version }}" ]; then
+            echo "version=${{ github.event.inputs.version }}" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          DERNIER=$(git -C source tag -l 'v*' --sort=-v:refname | head -1)
+          if gh release view "$DERNIER" -R "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Deja publiee : $DERNIER"
+          else
+            echo "A construire : $DERNIER"
+            echo "version=${DERNIER#v}" >> "$GITHUB_OUTPUT"
+          fi
+
+  build:
+    needs: guetter
+    if: needs.guetter.outputs.version != ''
+    runs-on: windows-latest
+
+    steps:
+      - name: Recuperer le code (depot prive)
+        uses: actions/checkout@v4
+        with:
+          repository: ARP273-ROSE/musicotheque
+          ssh-key: ${{ secrets.SOURCE_DEPLOY_KEY }}
+          ref: v${{ needs.guetter.outputs.version }}
+          fetch-depth: 0
+
+      - name: Determiner la version
+        id: version
+        shell: bash
+        run: |
+          V="${{ needs.guetter.outputs.version }}"
+          echo "value=$V" >> "$GITHUB_OUTPUT"
+          echo "Version : $V"
+
+      - name: Verifier que VERSION concorde avec le tag
+        shell: bash
+        run: |
+          FICHIER=$(tr -d ' \r\n' < VERSION)
+          TAG="${{ steps.version.outputs.value }}"
+          if [ "$FICHIER" != "$TAG" ]; then
+            echo "::error::Le fichier VERSION contient '$FICHIER' mais le tag annonce '$TAG'."
+            echo "Mettez VERSION a jour avant de poser le tag, sinon la mise a jour"
+            echo "automatique se declencherait en boucle chez les utilisateurs."
+            exit 1
+          fi
+
+      # Le journal du depot doit avoir une section par version, et
+      # surtout pour celle qu'on publie.
+      #
+      # Une premiere version comparait le fichier, caractere par
+      # caractere, a ce que l'historique produit. C'etait intenable : on
+      # commite le journal AVANT de poser le tag, donc il ne pouvait
+      # jamais contenir la version en cours — la publication de la
+      # 3.14.6 a echoue ainsi. On verifie donc que chaque version a sa
+      # section, ce qui est le vrai besoin.
+      - name: Verifier que le journal des versions est a jour
+        shell: bash
+        run: |
+          git fetch --tags --force --quiet
+          python - "${{ steps.version.outputs.value }}" <<'PYTHON'
+          import pathlib, re, subprocess, sys
+          attendue = sys.argv[1]
+          texte = pathlib.Path('CHANGELOG.md').read_text(encoding='utf-8')
+          presentes = set(re.findall(r'^## (\d+\.\d+\.\d+)', texte, re.M))
+          tags = subprocess.run("git tag", shell=True, capture_output=True,
+                                text=True).stdout.split()
+          attendues = {t[1:] for t in tags if re.match(r'^v\d+\.\d+\.\d+$', t)}
+          attendues.add(attendue)
+          manquantes = sorted(attendues - presentes,
+                              key=lambda v: tuple(int(x) for x in v.split('.')))
+          if manquantes:
+              print("::error::CHANGELOG.md ne parle pas de : "
+                    + ", ".join(manquantes))
+              print("Lancez « python notes_de_version.py --journal > "
+                    "CHANGELOG.md », committez, PUIS posez le tag.")
+              raise SystemExit(1)
+          print("Journal : %d version(s) decrite(s), dont %s."
+                % (len(presentes), attendue))
+          PYTHON
+
+      # Le journal destine aux utilisateurs est ecrit a la main : aucune
+      # machine ne sait resumer une version sans jargon. Mais il doit au
+      # moins citer la version publiee, sinon il se decroche du depot.
+      - name: Verifier le journal public
+        shell: bash
+        run: |
+          V="${{ steps.version.outputs.value }}"
+          MINEURE="${V%.*}"
+          URL="https://raw.githubusercontent.com/ARP273-ROSE/musicotheque-releases/main/CHANGELOG.md"
+          if curl -fsSL "$URL" -o /tmp/public.md 2>/dev/null; then
+            if ! grep -qE "^## ($V|$MINEURE)( |$|\b)" /tmp/public.md; then
+              echo "::error::Le journal public ne parle ni de $V ni de $MINEURE."
+              echo "Ajoutez-y une entree dans ARP273-ROSE/musicotheque-releases,"
+              echo "ecrite pour un lecteur qui n'est pas developpeur."
+              exit 1
+            fi
+            echo "Journal public : $MINEURE est bien decrite."
+          else
+            echo "::warning::Journal public illisible, controle ignore."
+          fi
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Un nom jamais importe ne se voit qu'a l'execution de sa ligne : la
+      # relecture des flux a ainsi plante chez un utilisateur, des mois apres
+      # l'ecriture du defaut. Ce controle est statique et tient en une seconde.
+      - name: Verifier qu'aucun nom ne manque
+        shell: bash
+        run: python verifier_symboles.py
+
+      # Un signal Qt declare `list` ou `dict` recopie sa charge element par
+      # element. Sur la bibliotheque chargee, cela faisait 341 ms de fenetre
+      # figee au demarrage, invisible dans le profil de toute fonction.
+      - name: Verifier qu'aucun signal ne recopie sa charge
+        shell: bash
+        run: python verifier_signaux.py
+
+      # L'installeur et l'application doivent s'accorder sur le nom du verrou,
+      # sans quoi une installation par-dessus l'application ouverte se termine
+      # en disant « terminee » sans avoir rien remplace.
+      - name: Verifier l'accord installeur / application
+        shell: bash
+        run: python verifier_installeur.py
+
+      # Une ligne rendue par SQLite se lit comme un dictionnaire mais n'a pas
+      # de methode `get` : l'appeler ne leve qu'a l'execution de la ligne
+      # fautive. « Classer la bibliotheque » tombait ainsi des la premiere
+      # piste, chez un utilisateur, sans que rien ne l'ait jamais signale.
+      - name: Verifier qu'aucun .get() ne porte sur une ligne SQLite
+        shell: bash
+        run: python verifier_lignes_sqlite.py
+
+      # Sous pythonw, un sous-processus sans CREATE_NO_WINDOW fait clignoter
+      # une console noire. Le veilleur du lecteur de CD interroge le materiel
+      # toutes les quatre secondes : une fenetre qui apparait et disparait en
+      # permanence sur le bureau, toute la journee.
+      - name: Verifier qu'aucun sous-processus n'ouvre de console
+        shell: bash
+        run: python verifier_sous_processus.py
+
+      # Une methode appelee sans « self. » : le nom existe dans le
+      # fichier, tout compile, l'application demarre — et le premier clic
+      # sur le bouton concerne leve un NameError. « Tout recuperer » est
+      # tombe ainsi, alors que les autres controles annonçaient « aucun
+      # nom manquant » : ils rangeaient les methodes parmi les noms du
+      # module.
+      - name: Verifier qu'aucune methode n'est appelee comme une fonction
+        shell: bash
+        run: python verifier_appels_de_methode.py
+
+      # Une boucle qui ecrit sans valider ET lit des fichiers laisse la
+      # transaction SQLite ouverte pendant toute la lecture. SQLite
+      # n'admet qu'un ecrivain : tout autre fil attend alors le delai de
+      # la base, deux minutes, et l'application parait gelee. Deux gels
+      # signales le 22/09/2026 venaient exactement de la.
+      # Deux actions qui partagent un raccourci : Qt le declare ambigu
+      # et n'en declenche AUCUNE. Rien ne le signale — le menu s'affiche,
+      # la touche ne fait simplement rien. « Importer des fichiers » et
+      # « Statistiques » etaient tous deux sur Ctrl+I.
+      - name: Verifier qu'aucun raccourci n'est en double
+        shell: bash
+        run: python verifier_raccourcis.py
+
+      - name: Verifier qu'aucune transaction n'est tenue trop longtemps
+        shell: bash
+        run: python verifier_transactions.py
+
+      - name: Construire le paquet autonome
+        shell: bash
+        run: python build_package.py --out "$RUNNER_TEMP/build"
+
+      - name: Verifier que le paquet demarre
+        shell: bash
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          PKG="$RUNNER_TEMP/build/MusicOtheque"
+          "$PKG/python/python.exe" -c "
+          from PyQt6.QtWidgets import QApplication
+          from PyQt6.QtMultimedia import QMediaPlayer
+          import sys; app = QApplication(sys.argv)
+          import web_radio, first_run, itunes_detect, updater, app_paths, reporting
+          import main_window, musicotheque
+          attendue = '${{ steps.version.outputs.value }}'
+          if musicotheque.VERSION != attendue:
+              raise SystemExit(
+                  'L application se croit en version ' + repr(musicotheque.VERSION)
+                  + ' alors que le tag annonce ' + attendue
+                  + ' : elle proposerait sans fin une mise a jour deja installee.')
+          print('paquet fonctionnel :', len(web_radio.RADIO_STATIONS), 'radios,',
+                'version vue par l application :', musicotheque.VERSION)
+          "
+
+      # Quatre pannes constatees chez un utilisateur, dont aucune n'avait
+      # jamais leve d'erreur : une relecture qui effaçait les compositeurs et
+      # les numeros de piste, un import iTunes incapable de les rendre, un
+      # ordre d'oeuvre introuvable, des colonnes figees. Ces controles
+      # tournent sur le paquet construit, avec son propre Python.
+      - name: Verifier les metadonnees et l'affichage
+        shell: bash
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          PKG="$RUNNER_TEMP/build/MusicOtheque"
+          cp tests_metadonnees.py "$PKG/app/"
+          cd "$PKG/app" && "$PKG/python/python.exe" tests_metadonnees.py
+          # L'archive de mise a jour est faite du contenu de ce dossier :
+          # les controles n'ont rien a faire chez l'utilisateur.
+          rm -f "$PKG/app/tests_metadonnees.py"
+
+      - name: Preparer l'archive de mise a jour
+        shell: bash
+        run: |
+          # Seuls les fichiers applicatifs : quelques centaines de kilo-octets,
+          # contre 360 Mo pour le paquet complet. C'est ce que telecharge
+          # l'application quand elle se met a jour toute seule.
+          cd "$RUNNER_TEMP/build/MusicOtheque/app"
+          rm -rf __pycache__
+          7z a -tzip "$GITHUB_WORKSPACE/musicotheque-app-${{ steps.version.outputs.value }}.zip" ./* > /dev/null
+          ls -lh "$GITHUB_WORKSPACE/musicotheque-app-${{ steps.version.outputs.value }}.zip"
+
+      - name: Installer Inno Setup
+        run: choco install innosetup --no-progress -y
+
+      - name: Compiler l'installeur
+        # PowerShell et non bash : Git Bash (MSYS) reecrit tout argument
+        # commencant par « / » en chemin Windows, si bien qu'ISCC recevait
+        # « C:/Program Files/Git/DAppVersion=... » et repondait
+        # « You may not specify more than one script filename ».
+        shell: pwsh
+        run: |
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" `
+            "/DAppVersion=${{ steps.version.outputs.value }}" `
+            "/DSourceDir=$env:RUNNER_TEMP\build\MusicOtheque" `
+            installer.iss
+          Get-ChildItem installer_out
+
+      - name: Preparer les notes de version
+        shell: bash
+        run: |
+          python notes_de_version.py "${{ steps.version.outputs.value }}" \
+            > /tmp/notes.md || echo "- Corrections diverses." > /tmp/notes.md
+          {
+            echo "CORPS<<FIN_DU_CORPS"
+            sed "s/X\.Y\.Z/${{ steps.version.outputs.value }}/g" .github/corps_de_release.md
+            echo
+            echo "## Ce qui change dans cette version"
+            echo
+            cat /tmp/notes.md
+            echo
+            echo "Le detail de toutes les versions : [CHANGELOG.md](https://github.com/ARP273-ROSE/musicotheque-releases/blob/main/CHANGELOG.md)"
+            echo "FIN_DU_CORPS"
+          } >> "$GITHUB_ENV"
+          echo "--- notes ---"; cat /tmp/notes.md
+
+      - name: Publier la Release
+        # Le code reste dans ce depot prive ; seuls les fichiers a telecharger
+        # partent dans le depot public, faute de quoi ni la page de
+        # telechargement ni l'API des mises a jour ne repondraient a
+        # l'utilisateur final (404 sur un depot prive).
+        uses: softprops/action-gh-release@v2
+        with:
+          repository: ARP273-ROSE/musicotheque-releases
+          token: ${{ github.token }}
+          name: MusicOtheque ${{ steps.version.outputs.value }}
+          tag_name: v${{ steps.version.outputs.value }}
+          draft: false
+          files: |
+            installer_out/MusicOtheque-Setup-${{ steps.version.outputs.value }}.exe
+            musicotheque-app-${{ steps.version.outputs.value }}.zip
+          body: ${{ env.CORPS }}
