@@ -12,6 +12,15 @@ parlent désormais du « serveur de partage » et de la « bibliothèque partag�
 
 ---
 
+## 3.21.13 — Windows 11 : lecteur de CD
+*12 octobre 2026*
+
+Sous Windows 11, la surveillance du lecteur de CD faisait appel toutes les
+quatre secondes à un outil que Windows 11 ne fournit plus. Elle s'en passe
+désormais : moins de travail inutile en arrière-plan.
+
+---
+
 ## 3.21.12 — Moins de fausses alertes webradios
 *12 octobre 2026*
 
