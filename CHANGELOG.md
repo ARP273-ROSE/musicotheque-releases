@@ -12,6 +12,14 @@ parlent désormais du « serveur de partage » et de la « bibliothèque partag�
 
 ---
 
+## 3.21.12 — Moins de fausses alertes webradios
+*12 octobre 2026*
+
+Une radio momentanément coupée par son diffuseur n'est plus signalée : elle
+est réécoutée une demi-heure plus tard avant toute alerte.
+
+---
+
 ## 3.21.11 — Affichage net partout, touche Entrée
 *9 octobre 2026*
 
