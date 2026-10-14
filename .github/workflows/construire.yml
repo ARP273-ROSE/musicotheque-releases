@@ -209,6 +209,7 @@ jobs:
                                              'verifier_installeur.py']
           print('controles=' + ' '.join(controles))
           print('controles_paquet=' + ' '.join(k.get('controles_paquet') or []))
+          print('proteges=' + ' '.join(k.get('fichiers_proteges') or []))
           for cle in ('nom_technique', 'nom_fichier', 'nom_affiche',
                       'depot_distribution', 'point_entree', 'icone', 'appid',
                       'fichier_version', 'artefact_prealable', 'artefact_dossier',
@@ -368,6 +369,16 @@ jobs:
           for DOSSIER in ${{ steps.kit.outputs.exclus_de_la_maj }}; do
             echo "  exclu de l'archive : $DOSSIER"
             rm -rf "$DOSSIER"
+          done
+          # Ce qui appartient a l'utilisateur ne part JAMAIS dans l'archive : un
+          # dossier « backups » vide, cree dans app/ par la verification du
+          # paquet, remplacait chez l'utilisateur ses sauvegardes par un
+          # dossier vide a chaque mise a jour (MusicOtheque jusqu'a la 3.21).
+          for PROTEGE in ${{ steps.kit.outputs.proteges }}; do
+            if [ -e "$PROTEGE" ]; then
+              echo "  donnee utilisateur retiree de l'archive : $PROTEGE"
+              rm -rf "$PROTEGE"
+            fi
           done
           NOM="${{ steps.kit.outputs.nom_technique }}-app-${{ steps.version.outputs.value }}.zip"
           7z a -tzip "$GITHUB_WORKSPACE/$NOM" ./* > /dev/null
