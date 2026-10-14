@@ -12,6 +12,31 @@ parlent désormais du « serveur de partage » et de la « bibliothèque partag�
 
 ---
 
+## 3.22.0 — Mac et Linux, anglais complet, nouvelle apparence
+*14 octobre 2026*
+
+- **Mac et Linux** : MusicOthèque s'installe désormais aussi sur Mac (Apple
+  Silicon et Intel) et sous Linux, avec la même apparence partout. Trois
+  fonctions n'existent que sous Windows — graver un CD, le CD audio inséré,
+  les listes d'Apple Music : sur Mac et Linux, leur entrée de menu est grisée
+  et une bulle d'aide dit pourquoi.
+- **Votre bibliothèque est mieux à l'abri** : elle est maintenant rangée dans
+  votre dossier personnel, à part du programme. Réinstaller MusicOthèque ne
+  peut plus l'effacer. Le rangement se fait tout seul, en un instant, au
+  premier démarrage de cette version : rien à faire, rien ne change à l'écran.
+- **Tout en anglais** pour qui a choisi l'anglais : il restait beaucoup de
+  messages en français. L'aide existe aussi en anglais.
+- **Une apparence qui ne bouge plus** : mêmes couleurs et même police (plus
+  lisible) sur tous les ordinateurs, quels que soient le thème et les réglages
+  du système.
+- **Un seul logo**, la double croche dorée : la fenêtre montrait encore
+  l'ancien disque vinyle.
+- **Un manuel à imprimer**, en français et en anglais, avec de vraies images
+  de l'application : menu **Aide → Manuel (PDF)**.
+- Les notes de mise à jour s'affichent dans la langue choisie.
+
+---
+
 ## 3.21.13 — Windows 11 : lecteur de CD
 *12 octobre 2026*
 

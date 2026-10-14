@@ -1,19 +1,33 @@
 # MusicOthèque
 
-**Un lecteur et une bibliothèque musicale pour Windows.**
+**Un lecteur et une bibliothèque musicale pour Windows, Mac et Linux.**
 Ce dépôt ne contient aucun code : il sert uniquement à distribuer
 l'application.
 
 ➡️ **[Télécharger la dernière version](../../releases/latest)**
  · [Ce qui change d'une version à l'autre](CHANGELOG.md)
+ · **[English](#english)**
 
 ---
 
 ## Installer
 
 1. Ouvrez la page [Releases](../../releases/latest).
-2. Téléchargez le fichier **`MusicOtheque-Setup-X.Y.Z.exe`**.
-3. Lancez-le.
+2. Téléchargez le fichier qui correspond à votre ordinateur :
+
+   | Système | Fichier |
+   |---|---|
+   | **Windows** | `MusicOtheque-Setup-X.Y.Z.exe` |
+   | **Mac Apple Silicon** (M1, M2…) | `MusicOtheque-X.Y.Z-macos-arm64.dmg` |
+   | **Mac Intel** | `MusicOtheque-X.Y.Z-macos-x86_64.dmg` |
+   | **Linux** | `MusicOtheque-X.Y.Z-linux-x86_64.tar.gz` (ou `-arm64`) |
+
+3. **Windows** : lancez-le. **Mac** : ouvrez le `.dmg` et glissez
+   l'application dans Applications ; la première fois, clic droit dessus →
+   **Ouvrir**. **Linux** : décompressez l'archive et lancez `./installer.sh`.
+
+Lien permanent vers le dernier installeur Windows :
+<https://github.com/ARP273-ROSE/musicotheque-releases/releases/latest/download/MusicOtheque-Setup.exe>
 
 L'installation se fait dans votre profil utilisateur : **aucun mot de passe
 administrateur n'est demandé**, et rien n'est modifié ailleurs sur
@@ -54,10 +68,10 @@ cette mise à jour automatique. Il ne s'installe pas à la main.
 
 ## Obtenir de l'aide
 
-- Dans l'application : touche **F1**, ou menu **Aide**. Dix-huit rubriques
+- Dans l'application : touche **F1**, ou menu **Aide**. Vingt-deux rubriques
   écrites pour quelqu'un qui n'a aucune notion d'informatique.
-- Menu **Aide → Manuel complet** : le même contenu, d'un seul tenant, à
-  imprimer si vous préférez le papier.
+- Menu **Aide → Manuel (PDF)** : le même contenu, d'un seul tenant, avec des
+  images de l'application, à imprimer si vous préférez le papier.
 
 ## Si quelque chose ne va pas
 
@@ -82,11 +96,42 @@ et enregistrées dans les fichiers eux-mêmes pour vous suivre partout.
 
 **Les radios** — 82 stations en direct, avec le titre du morceau diffusé.
 
-**Vos disques** — copie d'un CD vers la bibliothèque, et gravure d'un CD
-audio depuis une sélection.
+**Vos disques** (Windows) — copie d'un CD vers la bibliothèque, et gravure
+d'un CD audio depuis une sélection. Sur Mac et Linux, ces fonctions sont
+grisées : elles s'appuient sur des composants que seul Windows fournit.
 
 **Le classique** — classement automatique par période, forme, catalogue,
 instruments et tonalité ; harmonisation des noms de compositeurs.
+
+---
+
+## English
+
+**A music player and library for Windows, Mac and Linux.** This repository
+holds no code: it only distributes the application.
+
+**Install** — open the [Releases](../../releases/latest) page and download
+the file for your computer: `MusicOtheque-Setup-X.Y.Z.exe` (Windows),
+`MusicOtheque-X.Y.Z-macos-arm64.dmg` (Apple Silicon Mac),
+`MusicOtheque-X.Y.Z-macos-x86_64.dmg` (Intel Mac),
+`MusicOtheque-X.Y.Z-linux-x86_64.tar.gz` or `-arm64` (Linux). No administrator
+password is asked for. Windows may warn about an unsigned installer: **More
+info → Run anyway** (once). On a Mac, the first time, right-click the app →
+**Open**. On Linux, unpack and run `./installer.sh`.
+
+**Update** — download nothing: MusicOthèque checks for a new version at
+start-up and installs it when you agree. The `musicotheque-app-X.Y.Z.zip`
+file is for that automatic update only.
+
+**Help** — **F1** or the **Help** menu (22 topics), and **Help → Manual
+(PDF)**. The interface is in English or French (chosen on first start,
+changeable in the preferences). Problems are reported automatically if you
+allowed it; **Help → Report a problem** lets you add what you were doing.
+
+**Windows only** — burning audio CDs, the inserted audio CD, Apple Music for
+Windows playlists. On Mac and Linux these entries are greyed out.
+
+[What changes, version after version](CHANGELOG.en.md)
 
 ---
 
