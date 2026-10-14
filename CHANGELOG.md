@@ -12,6 +12,14 @@ parlent désormais du « serveur de partage » et de la « bibliothèque partag�
 
 ---
 
+## 3.22.1 — Correctif discret
+*14 octobre 2026*
+
+- Une fonction qui ne servait que sur l'ordinateur du mainteneur ne fait plus
+  partie du programme distribué. Rien ne change pour vous.
+
+---
+
 ## 3.22.0 — Mac et Linux, anglais complet, nouvelle apparence
 *14 octobre 2026*
 

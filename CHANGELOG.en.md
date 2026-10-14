@@ -9,6 +9,14 @@ version exists and offers to install it. You have nothing to download.
 
 ---
 
+## 3.22.1 — Quiet fix
+*14 October 2026*
+
+- A feature that was only used on the maintainer's computer is no longer part
+  of the distributed program. Nothing changes for you.
+
+---
+
 ## 3.22.0 — Mac and Linux, full English, new look
 *14 October 2026*
 
