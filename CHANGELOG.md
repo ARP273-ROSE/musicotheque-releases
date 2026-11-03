@@ -12,6 +12,12 @@ parlent désormais du « serveur de partage » et de la « bibliothèque partag�
 
 ---
 
+## 3.22.2 — KBS Classic FM écoutable à nouveau
+*3 novembre 2026*
+
+- **KBS Classic FM** : la radio coréenne ne répondait plus, le relais qui la
+  diffusait ayant fermé sa porte. Elle passe maintenant par le flux officiel de
+  KBS. Rien à faire de votre côté.
 ## 3.22.1 — Correctif discret
 *14 octobre 2026*
 

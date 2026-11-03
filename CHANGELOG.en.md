@@ -9,6 +9,12 @@ version exists and offers to install it. You have nothing to download.
 
 ---
 
+## 3.22.2 — KBS Classic FM is back
+*3 November 2026*
+
+- **KBS Classic FM**: the Korean station had stopped answering because the relay
+  carrying it refused access. It now uses the official KBS stream. Nothing for
+  you to do.
 ## 3.22.1 — Quiet fix
 *14 October 2026*
 
