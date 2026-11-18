@@ -12,6 +12,13 @@ parlent désormais du « serveur de partage » et de la « bibliothèque partag�
 
 ---
 
+## 3.22.3 — Mises à jour encore plus sûres
+*18 novembre 2026*
+
+- Chaque nouvelle version est désormais **signée** par son auteur. MusicOthèque
+  vérifie cette signature avant d'installer une mise à jour et refuse tout ce
+  qui ne vient pas de lui. Rien à faire de votre côté.
+
 ## 3.22.2 — KBS Classic FM écoutable à nouveau
 *3 novembre 2026*
 

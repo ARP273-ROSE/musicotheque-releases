@@ -9,6 +9,13 @@ version exists and offers to install it. You have nothing to download.
 
 ---
 
+## 3.22.3 — Even safer updates
+*18 November 2026*
+
+- Every new version is now **signed** by its author. MusicOthèque checks this
+  signature before installing an update and refuses anything that does not come
+  from him. Nothing for you to do.
+
 ## 3.22.2 — KBS Classic FM is back
 *3 November 2026*
 
