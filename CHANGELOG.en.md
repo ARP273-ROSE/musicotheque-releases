@@ -9,6 +9,14 @@ version exists and offers to install it. You have nothing to download.
 
 ---
 
+## 3.22.4 — Safer under the hood
+*24 November 2026*
+
+- The Python engine shipped with MusicOthèque moves to a version that still
+  receives security fixes, and it is checked before every build. Nothing for
+  you to do.
+- Podcasts: the Collège de France feeds can be followed.
+
 ## 3.22.3 — Even safer updates
 *18 November 2026*
 

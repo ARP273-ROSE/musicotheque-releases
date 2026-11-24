@@ -12,6 +12,14 @@ parlent désormais du « serveur de partage » et de la « bibliothèque partag�
 
 ---
 
+## 3.22.4 — Sous le capot, plus sûre
+*24 novembre 2026*
+
+- Le moteur Python livré avec MusicOthèque passe à une version qui reçoit
+  encore des correctifs de sécurité, et il est vérifié avant chaque
+  construction. Rien à faire de votre côté.
+- Podcasts : les flux du Collège de France peuvent être suivis.
+
 ## 3.22.3 — Mises à jour encore plus sûres
 *18 novembre 2026*
 
